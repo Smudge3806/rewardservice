@@ -1,5 +1,6 @@
 steal(
     '//can/can.js',
+    '//can/control/plugin/plugin.js',
     '//can/util/json.js',
     '//can/util/mvc.js',
     '//can/util/fixture/fixture.js',
@@ -16,5 +17,6 @@ steal(
 ).then(
     '//rewardservice/rewardservice.js'
 ).then(function(){
-    new App.Os.Controllers.Core(jQuery('body'), {});
+    //new App.Os.Controllers.Core(jQuery('body'), {});
+    jQuery('body').OSCore();
 });
