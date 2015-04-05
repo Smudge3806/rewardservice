@@ -10,4 +10,9 @@ steal(
     '//bootstrap/bootstrap.css'
 ).then(
     '//bootstrap/bootstrap.js'
-);
+).then(
+    './controllers/controllers.js',
+    './views/views.js'
+).then(function(){
+    new App.Os.Controllers.Core(jQuery('body'), {});
+});
