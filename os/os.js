@@ -1,5 +1,10 @@
 steal(
     '//can/can.js',
+    '//can/util/json.js',
+    '//can/util/mvc.js',
+    '//can/util/fixture/fixture.js',
+    '//sprintf/src/sprintf.js'
+).then(
     '//lib/lib.js'
 ).then(
     '//bootstrap/bootstrap.css'
