@@ -1,5 +1,5 @@
 App.Abstract.Controllers.Core.extend('App.Os.Controllers.Core', {
-
+    pluginName: 'OSCore'
 }, {
     init: function() {
         try {
@@ -7,7 +7,7 @@ App.Abstract.Controllers.Core.extend('App.Os.Controllers.Core', {
             this.render();
             this.main();
         } catch (error) {
-            alert(errors);
+            alert(error);
         }
     },
 
@@ -17,7 +17,7 @@ App.Abstract.Controllers.Core.extend('App.Os.Controllers.Core', {
     },
 
     main: function() {
-        // instantiate/update the controller.
+        this.elements.service.ServiceContainer(this.options);
     },
 
     initAttributes: function() {

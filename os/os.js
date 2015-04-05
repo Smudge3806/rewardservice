@@ -14,8 +14,6 @@ steal(
 ).then(
     './controllers/controllers.js',
     './views/views.js'
-).then(
-    '//rewardservice/rewardservice.js'
 ).then(function(){
     //new App.Os.Controllers.Core(jQuery('body'), {});
     jQuery('body').OSCore();

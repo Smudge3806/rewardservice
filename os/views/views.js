@@ -1,3 +1,4 @@
 steal(
-    './navigation.ejs'
+    './navigation.ejs',
+    './servicecontainer.ejs'
 );
