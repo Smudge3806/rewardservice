@@ -7,3 +7,6 @@
 [submodule "can"]
 	path = can
 	url = https://github.com/bitovi/canjs.git
+[submodule "documentjs"]
+	path = documentjs
+	url = https://github.com/bitovi/documentjs.git
