@@ -10,3 +10,6 @@
 [submodule "documentjs"]
 	path = documentjs
 	url = https://github.com/bitovi/documentjs.git
+[submodule "jmvc"]
+	path = jmvc
+	url = https://github.com/bitovi/jmvc-generators.git
