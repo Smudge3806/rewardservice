@@ -1,3 +1,6 @@
 [submodule "sprintf"]
 	path = sprintf
 	url = https://github.com/alexei/sprintf.js.git
+[submodule "steal"]
+	path = steal
+	url = https://github.com/bitovi/steal.git
