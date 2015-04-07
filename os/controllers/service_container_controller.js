@@ -24,6 +24,7 @@
 
         defaults: {
             services: [
+                'ChannelService',
                 'RewardService'
             ]
         }
