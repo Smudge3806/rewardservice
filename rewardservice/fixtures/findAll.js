@@ -1,6 +1,5 @@
-(function(rewardData, channelService, eligibilityService) {
+(function(channelService, eligibilityService) {
     var getAccountEligibility = function(account_id) {
-            return 'CUSTOMER_ELIGIBLE';
             return eligibilityService.isEligible(account_id);
         },
         getRewards = function(account_id) {
@@ -40,16 +39,20 @@
         },
         _getRewards = function(account_id) {
             var channels = channelService.getUserSubscriptions(account_id),
-                rewards = {};
+                self = this,
+                rewards = [];
 
                 channels.forEach(function(channel, index, channels){
-                    if (channel in rewardData && rewardData[channel]) {
-                        rewards[channel] = rewardData[channel];
+                    if (channel in self.Rewards && self.Rewards[channel]) {
+                        rewards.push({
+                            channel: channel,
+                            reward: self.Rewards[channel]
+                        });
                     }
                 });
 
             return rewards;
-        };
+        }.bind(App.RewardService.Data);
 
     can.fixture('GET rewards/all', function(params, response, settings, headers) {
         var data = getRewards(params.user_id);
@@ -60,4 +63,4 @@
             data.data
         );
     });
-})(App.RewardService.Data.Rewards, App.ChannelService.Data, {});
+})(App.ChannelService.Data, App.EligibilityService.Data);

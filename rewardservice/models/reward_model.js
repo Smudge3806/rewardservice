@@ -10,3 +10,11 @@ can.Model.extend('App.RewardService.Models.Rewards', {
 }, {
 
 });
+
+can.Model.List.extend('App.RewardService.Models.Rewards.List', {
+
+}, {
+    getRewards: function() {
+        debugger;
+    }
+});
