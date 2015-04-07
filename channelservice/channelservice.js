@@ -4,6 +4,7 @@ steal(function(){
 }).then(
     './fixtures/data.js',
     './fixtures/findAll.js',
+    './fixtures/functions.js',
     './controllers/controllers.js',
     './models/channel_model.js'
 );
