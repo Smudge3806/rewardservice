@@ -28,7 +28,7 @@ App.Abstract.Controllers.Service.extend('App.RewardService.Controllers.Core', {
                 if (rewards) {
                     self.renderRewards(rewards);
                 } else {
-                    self.element.html('<h4>You are not eligible for any rewards</h4>');
+                    self.elements.body.html('<h4>You are not eligible for any rewards</h4>');
                 }
             })
             .fail(function(error) {

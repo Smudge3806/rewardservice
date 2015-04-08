@@ -1,5 +1,18 @@
+.OSCore {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(45, 43, 226, 0.38);
+}
+
 .service-container {
     margin: 50px 100px;
+}
+
+.service-container .service {
+    margin-bottom: 20px;
 }
 
 .service-container .service .header {
@@ -19,4 +32,10 @@
     border: thin solid #e7e7e7;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+    background-color: #fff;
+}
+
+.service-container .service .body .reward,
+.service-container .service .body .channel {
+    list-style-type: circle;
 }

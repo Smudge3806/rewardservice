@@ -2,6 +2,7 @@ App.Abstract.Controllers.Service.extend('App.ChannelService.Controllers.Core', {
     pluginName: 'ChannelService'
 }, {
     init: function() {
+        this.elements = {};
         this.main();
     },
 
@@ -11,10 +12,12 @@ App.Abstract.Controllers.Service.extend('App.ChannelService.Controllers.Core', {
     },
 
     main: function() {
-        this.render();
-        if (this.options.user_id) {
-            this.getInfo();
-        }
+        this.render().done(function(){
+            this.elements.body = this.element.find('.body');
+            if (this.options.user_id) {
+                this.getInfo();
+            }
+        }.bind(this));
     },
 
     getInfo: function() {
@@ -22,9 +25,23 @@ App.Abstract.Controllers.Service.extend('App.ChannelService.Controllers.Core', {
 
         return App.ChannelService.Models.Channel.findAll(this.options)
             .done(function(channels){
-                self.render(channels);
+                self.renderChannels(channels);
             }).fail(function(error){
                 self.renderError(error);
             });
+    },
+
+    renderChannels: function(channels) {
+        var channelsContainer,
+            self = this;
+
+        this.elements.body.html(this.view('//channelservice/views/channels.ejs'));
+        channelsContainer = this.elements.body.children('.channels');
+
+        channels.each(function(channel) {
+            channelsContainer.append(self.view('//channelservice/views/channel.ejs', {
+                channel: channel
+            }));
+        });
     }
 });
