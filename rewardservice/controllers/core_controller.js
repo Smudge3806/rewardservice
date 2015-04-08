@@ -2,6 +2,7 @@ App.Abstract.Controllers.Service.extend('App.RewardService.Controllers.Core', {
     pluginName: 'RewardService'
 }, {
     init: function() {
+        this.elements = {};
         this.main();
     },
 
@@ -11,7 +12,9 @@ App.Abstract.Controllers.Service.extend('App.RewardService.Controllers.Core', {
     },
 
     main: function() {
-        this.render();
+        this.render().done(function(){
+            this.elements.body = this.element.find('.body');
+        }.bind(this));
         if (this.options.user_id) {
             this.getInfo();
         }
@@ -37,8 +40,8 @@ App.Abstract.Controllers.Service.extend('App.RewardService.Controllers.Core', {
         var rewardsContainer,
             self = this;
 
-        this.element.html(this.view('//rewardservice/views/rewards.ejs'));
-        rewardsContainer = this.element.children('.rewards');
+        this.elements.body.html(this.view('//rewardservice/views/rewards.ejs'));
+        rewardsContainer = this.elements.body.children('.rewards');
 
         rewards.each(function(reward) {
             rewardsContainer.append(self.view('//rewardservice/views/reward.ejs', {

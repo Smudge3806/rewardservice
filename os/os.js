@@ -13,8 +13,8 @@ steal(
     '//bootstrap/bootstrap.js'
 ).then(
     './controllers/controllers.js',
+    './public/css/service.css',
     './views/views.js'
 ).then(function(){
-    //new App.Os.Controllers.Core(jQuery('body'), {});
     jQuery('body').OSCore();
 });
