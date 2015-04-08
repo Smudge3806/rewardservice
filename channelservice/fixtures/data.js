@@ -8,7 +8,7 @@
     ];
 
     _channelData.Subscriptions = {
-        '1001': ['SPORTS', 'KIDS', 'MUSIC', 'NEWS', 'SPORTS'],
+        '1001': ['SPORTS', 'KIDS', 'MUSIC', 'NEWS', 'MOVIES'],
         '1002': ['KIDS', 'NEWS']
     };
 })(App.ChannelService.Data);

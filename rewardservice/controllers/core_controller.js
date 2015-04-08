@@ -18,15 +18,32 @@ App.Abstract.Controllers.Service.extend('App.RewardService.Controllers.Core', {
     },
 
     getInfo: function() {
+        var self = this;
+
         return App.RewardService.Models.Rewards.findAll(this.options)
             .done(function(rewards) {
-                debugger;
+                if (rewards) {
+                    self.renderRewards(rewards);
+                } else {
+                    self.element.html('<h4>You are not eligible for any rewards</h4>');
+                }
             })
             .fail(function(error) {
-                debugger;
-            })
-            .always(function() {
-                debugger;
+                self.renderError(error);
             });
+    },
+
+    renderRewards: function(rewards) {
+        var rewardsContainer,
+            self = this;
+
+        this.element.html(this.view('//rewardservice/views/rewards.ejs'));
+        rewardsContainer = this.element.children('.rewards');
+
+        rewards.each(function(reward) {
+            rewardsContainer.append(self.view('//rewardservice/views/reward.ejs', {
+                reward: reward
+            }));
+        });
     }
 });

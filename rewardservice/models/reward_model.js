@@ -1,20 +1,28 @@
-can.Model.extend('App.RewardService.Models.Rewards', {
-    findAll: function(params) {
-        var self = this;
+(function(){
+    var toTitleCase = function() {
+        return this.charAt(0).toUpperCase() + this.substr(1).toLowerCase();
+    };
 
-        return jQuery.ajax('rewards/all', params, {})
-            .pipe(function(rewards, status){
-                return self.models(rewards);
-            });
-    }
-}, {
+    can.Model.extend('App.RewardService.Models.Rewards', {
+        findAll: function(params) {
+            var self = this;
 
-});
+            return jQuery.ajax('rewards/all', params, {})
+                .pipe(function(rewards, status){
+                    return self.models(rewards);
+                });
+        }
+    }, {
+        getChannel: function() {
+            return toTitleCase.call(this.channel);
+        },
 
-can.Model.List.extend('App.RewardService.Models.Rewards.List', {
+        getReward: function() {
+            var parts = this.reward.split('_');
 
-}, {
-    getRewards: function() {
-        debugger;
-    }
-});
+            return parts.map(function(part) {
+                return toTitleCase.call(part);
+            }).join(' ');
+        }
+    });
+})();
