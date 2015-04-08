@@ -1,6 +1,6 @@
 # Rewards Service
 
-####[Live Demo](sky.cj-dev.co.uk)
+####[Live Demo](http://sky.cj-dev.co.uk)
 
 ####Scenario
 
