@@ -13,3 +13,13 @@ engineering team, developing the customer account website, is working on the sto
 
 The Account Management team has partnered with the Customer Status team that provides a
 service that checks the customer eligibility based on loyalty and billing status.
+
+####Populated Data
+
+The application has been preloaded with three accounts to capture the majority of variations.
+
+| Account Number | Eligible for a reward |
+|-----|-----|
+| 1001 | Eligible |
+| 1002 | Not Eligible |
+| 1003 | Eligible |
