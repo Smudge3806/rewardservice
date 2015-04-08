@@ -23,3 +23,17 @@ The application has been preloaded with three accounts to capture the majority o
 | 1001 | Eligible |
 | 1002 | Not Eligible |
 | 1003 | Eligible |
+
+####Non-Library Code
+
+There's a lot of Open Source here... So what did I actually write? Check out these folders:
+
+```
+channelservice/
+eligibilityservice/
+lib/
+os/
+rewardservice/
+```
+
+Also, check out the [projects changelog](http://sky.cj-dev.co.uk/changelog.txt).
