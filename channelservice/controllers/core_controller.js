@@ -25,7 +25,11 @@ App.Abstract.Controllers.Service.extend('App.ChannelService.Controllers.Core', {
 
         return App.ChannelService.Models.Channel.findAll(this.options)
             .done(function(channels){
-                self.renderChannels(channels);
+                if (channels.length) {
+                    self.renderChannels(channels);
+                } else {
+                    self.elements.body.html(self.view('//channelservice/views/no_subscriptions.ejs'));
+                }
             }).fail(function(error){
                 self.renderError(error);
             });

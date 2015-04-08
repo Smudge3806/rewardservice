@@ -25,10 +25,10 @@ App.Abstract.Controllers.Service.extend('App.RewardService.Controllers.Core', {
 
         return App.RewardService.Models.Rewards.findAll(this.options)
             .done(function(rewards) {
-                if (rewards) {
+                if (rewards.length) {
                     self.renderRewards(rewards);
                 } else {
-                    self.elements.body.html('<h4>You are not eligible for any rewards</h4>');
+                    self.elements.body.html(self.view('//rewardservice/views/not_eligible.ejs'));
                 }
             })
             .fail(function(error) {
@@ -48,5 +48,9 @@ App.Abstract.Controllers.Service.extend('App.RewardService.Controllers.Core', {
                 reward: reward
             }));
         });
+    },
+
+    renderError: function() {
+        this.elements.body.html(this.view('//rewardservice/views/error.ejs'));
     }
 });

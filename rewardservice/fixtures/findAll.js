@@ -17,7 +17,7 @@
                     results = {
                         status: 200,
                         message: 'success',
-                        data: null
+                        data: []
                     };
                     break;
                 case 'Technical failure exception':
