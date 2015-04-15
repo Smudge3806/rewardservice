@@ -1,7 +1,5 @@
 # Rewards Service
 
-####[Live Demo](http://sky.cj-dev.co.uk)
-
 ####Scenario
 
 A ground-breaking broadcaster has decided to reward its most loyal customers. A software
@@ -36,4 +34,3 @@ os/
 rewardservice/
 ```
 
-Also, check out the [projects changelog](http://sky.cj-dev.co.uk/changelog.txt).
